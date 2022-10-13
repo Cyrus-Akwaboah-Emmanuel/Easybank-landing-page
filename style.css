@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* ### Primary */
+    --Dark-Blue: hsl(233, 26%, 24%);
+    --Lime-Green: hsl(136, 65%, 51%);
+    --Bright-Cyan: hsl(192, 70%, 51%);
+
+    /* ### Neutral */
+    --Grayish-Blue: hsl(233, 8%, 62%);
+    --Light-Grayish-Blue: hsl(220, 16%, 96%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+
+    /* font */
+    --font-family: 'Public Sans', sans-serif;
+}
+body{
+    overflow-x: hidden;
+    position: relative;
+    font: 18px;
+    font-family: var(--font-family);
+}
+
+header{
+    width: 100vw;
+    background-color: var(--White);
+    position: fixed;
+    z-index: 100;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.navcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navlinks li{
+    margin: 1.7rem;
+    list-style: none;
+    display: inline-block;
+}
+
+.navlinks li a{
+    color: var(--Grayish-Blue);
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+}
+.navlinks li a:hover{color: #000;}
+
+.navlinks li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+    width: 0;
+    height: 5px;
+    background-image: linear-gradient(hsl(136, 65%, 51%),hsl(192, 70%, 51%),hsl(233, 26%, 24%));
+    transition: all .4s ease;
+}
+
+.navlinks li a:hover::after{
+    width: 100%;
+    transform: translateX(0px);
+}
+
+.request-invite{
+    color: var(--White);
+    padding: 1rem 0px;
+    margin: 20px 0px;
+    width: 12em;
+    border: 0px;
+    cursor: pointer;
+    border-radius: 30pt;
+    background-image: linear-gradient(hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    font-family: var(--font-family);
+    font-weight: 300;
+    animation: animate 5s infinite alternate;
+}
+@keyframes animate{
+    0%{
+        background: hsl(136, 65%, 51%);
+    }
+    100%{
+        background: hsl(192, 70%, 51%);
+    }
+}
+.burger-btn{display: none;}
+
+/* main  */
+.banner-container{
+    gap: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-family);
+}
+
+.bannerinfo h1{
+    font-size: 3.8rem;
+    font-weight: 400;
+}
+.bannerinfo p{
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 300;
+    color: var(--Grayish-Blue);
+}
+
+#banner-txt{padding-left: 5rem;}
+
+#banner-svg{
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -60px;
+    background-position-y: -150px;
+    background-image: url(images/bg-intro-desktop.svg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mockup{
+    width: 100%;
+    transform: translate(130px, -5px);
+}
+
+/* Why choose Easybank */
+.reason{
+    padding: 5rem 0px;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.choose{
+    display: flex;
+    gap: 10rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+.choose p{
+    color: var(--Grayish-Blue);
+    line-height: 1.4;
+}
+
+.why-us{max-width: 500px; font-weight: 300;}
+.why-us h1{font-weight: 300;}
+
+.svg-icons{
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    transition: .4s ease;
+}
+.svg-icons h2{padding: 1rem 0px; font-weight: 300;}
+
+.svg-info img{
+    background-color: linear-gradient(hsl(138, 65%, 51%),hsl(192, 70%, 51%));
+    background-blend-mode: hard-light;
+    transition: transform .7s ease, 
+    background-color .7s ease;
+}
+.svg-info img:hover{
+    transform: rotate(360deg);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* latest articles */
+.latest-articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 0px;
+}
+.latest-articles h1:first-child{padding: 0px 0px 2rem;}
+.latest-articles h1{font-weight: 400;}
+
+.cards{
+    gap: 2rem;
+    display: flex;
+    font-weight: 300;
+    justify-content: center;
+    color: var(--Grayish-Blue);
+}
+.imgbx{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .5s ease;
+    border-top-left-radius: 30px;
+    cursor: pointer;
+    background-image: url(images/image-currency.jpg);
+}
+.imgbx:hover{border-top-left-radius: 0px;}
+
+.card:nth-child(2) .imgbx{background-image: url(images/image-restaurant.jpg);}
+.card:nth-child(3) .imgbx{background-image: url(images/image-plane.jpg);}
+.card:nth-child(4) .imgbx{background-image: url(images/image-confetti.jpg);}
+.card{background-color: var(--Light-Grayish-Blue);}
+.card h1{padding: 1rem 0px;}
+.card a{
+    color: black;
+    text-decoration: none;
+}
+
+.card p a:first-child{color: var(--Grayish-Blue);}
+.card a:hover{color: var(--Lime-Green);}
+
+.cardinfo{padding: 1rem;}
+
+/* footer */
+footer{
+    padding: 5rem;
+    background-color: var(--Dark-Blue);
+}
+
+.footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.easybank-media{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.medialinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    gap: 1rem;
+}
+
+.footerlinks{
+    list-style: none;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2,1fr);
+}
+.footerlinks li a{
+    color: var(--White);
+    text-decoration: none;
+    line-height: 1.5;
+}
+.footerlinks li a:hover{color: var(--Lime-Green);}
+
+.copyright{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.copyright p{color: var(--Grayish-Blue);}
+
+@media (max-width: 1000px){
+    .navcontainer{
+        padding: 1rem;
+        position: relative;
+    }
+    .navlinks li a::after{
+        display: none;
+    }
+    .burger-btn{
+        display: block;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .navcontainer .request-invite{display: none;}
+
+    .navlinks{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 10vh;
+        background-color: var(--White);
+        transform: translateY(20%);
+        opacity: 0;
+        border-radius: 20px;
+        box-shadow: -1px 1px 6px -1px rgba(0,0,0,0.75);
+        transition: transform .4s ease, opacity .3s ease;
+    }
+    .navlinks li{
+        margin: 1rem;
+        list-style: none;
+        display: inline-block;
+    }
+    
+    .navlinks li a{ font-size: 2rem;}
+    .navlinks li a:hover{color: var(--Lime-Green);}
+    .banner-container{
+        gap: 1rem;
+        flex-direction: column-reverse;
+    }
+    .navlinks.show{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    #banner-txt{
+        padding-left: unset;
+        text-align: center;
+    }
+
+    #banner-svg{
+        width: 100%;
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-position-x: unset;
+        background-position-y: unset;
+        background-image: url(images/bg-intro-mobile.svg);
+    }
+    
+    #mockup{
+        width: 100%;
+        transform: unset;
+    }
+
+    .choose{
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .svg-icons{flex-wrap: wrap;}
+
+    .latest-articles{
+        text-align: center;
+    }
+    .cards, .footer-container{flex-direction: column;}
+    .footerlinks,.copyright{
+        text-align: center;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
